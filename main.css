@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+#wrap {
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 300px);
+}
+#input table {
+    width: 600px;
+    height: 260px;
+    text-align: center;
+}
+#result table {
+    width: 600px;
+    height: 370px;
+    text-align: center;
+}
+#input table, #result table {
+    font-size: 16px;
+
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+}
+.first-cell {
+    background-color: green;
+    color: white;
+    border-bottom: 1px solid black;
+}
+#input #calculate {
+    margin: 5px;
+    float: right;
+}
+
+#result {
+    display: none;
+    position: relative;
+    top: 100px;
+}
+
+a {
+    color: gray;
+    text-decoration: none;
+}

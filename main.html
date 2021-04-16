@@ -3,10 +3,10 @@
         <title>적정주가 계산기</title>
         <meta charset="utf-8">
 
-        <script src="lib/jquery-3.5.1.min.js"></script>
+        <script src="lib/vue.js"></script>
         
         <link rel="stylesheet" href="main.css">
-        <script src="main.js"></script>
+        <script src="main.js" async defer></script>
 
     </head>
     <body>
@@ -27,26 +27,26 @@
                         <td>
                             자기자본
                         <td>
-                            <input id="capital" type="number"/>억원
+                            <input v-model="capital" type="number"/>억원
                     <tr>
                         <td>
                             당기순이익
                         <td>
-                            <input id="earning" type="number"/>억원
+                            <input v-model="earning" type="number"/>억원
                     <tr>
                         <td>
                             요구수익률
                         <td>
-                            <input id="required" type="number" min="1" max="100"/>%
+                            <input v-model="required" type="number" min="1" max="100"/>%
                     <tr>
                         <td>
                             발행주식수
                         <td>
-                            <input id="stocks" type="number"/>주
+                            <input v-model="stocks" type="number"/>주
                 </table>
-                <button id="calculate">산출</button>
+                <button v-on:click="calculate">산출</button>
             </div>
-            <div id="result">
+            <div id="result" v-if="calc_done">
                 <h4>결과</h4>
                 <table>
                     <tr class="first-cell">
@@ -58,34 +58,34 @@
                         <td>
                             ROE
                         <td>
-                            <span id="ROE"></span>%
+                            {{ROE}}%
 
                     <tr>
                         <td>
                             초과수익률
                         <td>
-                            <span id="over-earning-ratio"></span>%
+                            {{over_earning_ratio}}%
                     
                     <tr>
                         <td>
                             초과수익
                         <td>
-                            <span id="over-earning"></span>원
+                            {{over_earning}}원
                     <tr>
                         <td>
                             프리미엄가치
                         <td>
-                            <span id="premium"></span>원
+                            {{premium}}원
                     <tr>
                         <td>
                             적정시총
                         <td>
-                            <span id="ideal-market-cap"></span>원
+                            {{ideal_market_cap}}원
                     <tr>
                         <td>
                             적정주가
                         <td>
-                            <span id="ideal-price"></span>원
+                            {{ideal_price}}원
                 </table>
                 <br><br><br>
             </div>
